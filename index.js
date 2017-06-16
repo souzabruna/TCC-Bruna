@@ -2,8 +2,9 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var Product = require('./models/product.js');
-var dbURL = process.env.MONGO_URL;
-
+var User= require('./models/user.js');
+///var dbURL = process.env.MONGO_URL;
+var dbURL = "mongodb://easy_sale:Easybd@ds151951.mlab.com:51951/easy_sale";
 // Testa variável de ambiente
 if(!dbURL){
   console.log("ERRO : Não foi encontrada a url do Mongo. \nDefina a variável MONGO_URL com a url");
@@ -20,11 +21,14 @@ app.get('/', function (req, res) {
 });
 // Iníco Web Services
 
+//Produto
 // CREATE
-app.get('/xml/product/new/:name/:price', function (req, res) {
+app.get('/xml/product/new/:code/:name/:price/:description', function (req, res) {
+  var code =  req.param('code');
   var name =  req.param('name');
   var price = req.param('price');
-  var newPoduct = new Product({name: name, price: parseInt(price)});
+  var description =  req.param('description');
+  var newPoduct = new Product({code: parseInt(code), name: name, price: parseInt(price), description: description});
   newPoduct.save(function (error, prod) {
     var result  = '';
     if (error){
@@ -94,6 +98,38 @@ app.get('/xml/product/delete/:id', function (req, res) {
     }
     else{
       result = "Deletado com sucesso!";
+    }
+    res.send(result);
+  });
+});
+
+//Usuário
+// CREATE
+app.get('/xml/user/new/:code/:name', function (req, res) {
+  var code =  req.param('code');
+  var name =  req.param('name');
+  var newUser = new User({code: parseInt(code), name: name});
+  newUser.save(function (error, user){
+    var result  = '';
+    if (error){
+      result = "Erro ao inserir: " + error;
+    }
+    else{
+      result = "Usuário inserido: " + user.name;
+    }
+    res.send(result);
+  });
+});
+
+// READ ALL
+app.get('/xml/user/', function (req, res) {
+  User.find(function(error,users){
+    var result = '';
+    if (error){
+      result = "Erro ao listar: " + error;
+    }
+    else{
+      result = users;
     }
     res.send(result);
   });
