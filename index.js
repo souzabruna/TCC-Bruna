@@ -3,6 +3,7 @@ var app = express();
 var mongoose = require('mongoose');
 var Product = require('./models/product.js');
 var User= require('./models/user.js');
+
 ///var dbURL = process.env.MONGO_URL;
 var dbURL = "mongodb://easy_sale:Easybd@ds151951.mlab.com:51951/easy_sale";
 // Testa variável de ambiente
@@ -134,6 +135,37 @@ app.get('/xml/user/', function (req, res) {
     res.send(result);
   });
 });
+
+
+// READ ONE
+app.get('/xml/user/:id', function (req, res) {
+  var id = req.param('id');
+  User.find({ _id: id},function(error,users){
+    var result = '';
+    if (error){
+      result = "Erro ao listar: " + error;
+    }
+    else{
+      result = users[0];
+    }
+    res.send(result);
+  });
+});
+// DELETE
+app.get('/xml/user/delete/:id', function (req, res) {
+  var id = req.param('id');
+  User.deleteOne({ _id: id},function(error){
+    var result = '';
+    if (error){
+      result = "Erro ao Deletar: " + error;
+    }
+    else{
+      result = "Deletado com sucesso!";
+    }
+    res.send(result);
+  });
+});
+
 
 // Start Server
 app.listen(3000, function () {
