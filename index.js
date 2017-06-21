@@ -3,7 +3,7 @@ var app = express();
 var mongoose = require('mongoose');
 var Product = require('./models/product.js');
 var User= require('./models/user.js');
-
+var Client= require('./models/client.js');
 ///var dbURL = process.env.MONGO_URL;
 var dbURL = "mongodb://easy_sale:Easybd@ds151951.mlab.com:51951/easy_sale";
 // Testa variável de ambiente
