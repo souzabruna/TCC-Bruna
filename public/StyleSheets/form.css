@@ -1,0 +1,211 @@
+.Container{
+	width: 90%;
+	display: flex; 
+	justify-content: column;
+	flex-wrap: wrap;
+	border: 0.5px solid #E0C3A5;
+	justify-content: center;
+	align-self: center;
+	min-height: 85vh;
+	margin-top: 35px;
+	background-color: rgba(247,241,241,0.93);
+	margin-bottom: 35px;
+	padding-bottom: 15px;
+	border-radius: 5px;
+
+}
+
+.TitleForm {
+	font-family: 'Lato', sans-serif;
+	height: 20px;
+	flex-grow: 1;
+	width: 100%;
+	display: flex; 
+	justify-content: center;
+	}
+
+.Form {
+	font-family: 'Lato', sans-serif;
+	padding-top: 30px;
+	flex-grow: 9;
+	width: 98%;
+	display: flex; 
+	justify-content: center;
+	flex-wrap: wrap;
+	flex-direction: column;
+	border-radius: 5px;
+		background-color: rgba(247,241,241,0.93);
+
+}
+	
+.Group {
+	font-family: 'Lato', sans-serif;
+	display: flex;
+	width: 90%;
+	flex-direction: column;
+    margin: 15px;
+    height: 60px;
+    font-size: 1em; 
+	justify-content: center;
+}
+
+.input {
+	border: 1px solid #C61357;
+	height: 30px;
+	border-radius: 5px;
+	margin-top: 4px;
+	background-color: transparent;
+}
+
+.input:hover {
+	box-shadow: 3px 2px 4px #ECDAAF;
+	border: 0.5px solid #E0C3A5;
+}
+.input:active {
+	box-shadow: 3px 2px 4px #ECDAAF;
+	border: 0.5px solid #E0C3A5;
+}
+
+.span {
+	font-family: 'Lato', sans-serif;
+	
+
+}
+
+.boxButton {
+	padding-top: 20px;
+	flex-grow: 1;
+	width: 100%;
+	display: flex;
+	align-self: flex-end; 
+	justify-content: flex-end;
+	
+
+}
+.title {
+		color: #B63165;
+		font-size: 2em;
+		font-weight: bold;
+
+	}
+
+@media (min-width: 900px) {
+	.Container {
+		border: 0.5px solid #E0C3A5;
+		width: 70vw;
+		display: flex; 
+		justify-content: center;
+		flex-wrap: wrap;
+		flex-direction: column;
+		border-radius: 5px;
+		margin-bottom: 50px;
+		padding-bottom: 30px;
+	}
+
+	
+	.TitleForm {
+		padding-bottom: 15px;
+		height: 20px;
+		flex-grow: 1;
+		width: 70vw;
+		display: flex; 
+		justify-content: center;
+		
+	}
+	.title {
+		color: #B63165;
+		font-size: 2em;
+		font-weight: bold;
+
+	}
+	.Form {
+		padding-top: 25px;
+		flex-grow: 9;
+		width: 70vw;
+		display: flex; 
+		justify-content: center;
+		flex-wrap: wrap;
+		flex-direction: row;
+		border-radius: 5px;
+
+	}
+	.FormDescription{
+		padding-top: 25px;
+		width: 70vw;
+		display: flex; 
+		justify-content: center;
+		flex-direction: column;
+	}
+	.Group{
+		margin-bottom: 0 !important;
+		display: flex;
+		flex-direction: column;
+	    margin: 15px;
+	    height: 60px;
+	    font-size: 1em; 
+		width: 40%;
+		padding-bottom: 0;
+
+	}
+	.GroupAdress{
+		margin-bottom: 0 !important;
+		display: flex;
+		flex-direction: column;
+	    margin: 7px;
+	    height: 60px;
+	    font-size: 1em; 
+		width: 45%;
+		padding-bottom: 0;
+
+	}
+	.input {
+		border: 0.5px solid #C61357;
+		height: 30px;
+		border-radius: 5px;
+		margin-top: 4px;
+	}
+	.input:hover {
+		box-shadow: 3px 2px 4px #ECDAAF;
+		border: 0.5px solid #E0C3A5;
+	}
+	.input:active {
+		box-shadow: 3px 2px 4px #ECDAAF;
+		border: 0.5px solid #E0C3A5;
+	}
+	.span {
+		font-weight: bold;
+	}
+
+	.TitleAdress {
+    	display: flex;
+    	align-self: center;
+    	width: 100%;
+    	align-items: center;
+    	justify-content: center;
+    	height: 30px;
+    	flex-grow: 1;
+    	padding: 5px;
+	}
+	
+	.ContentAdress{
+		display: flex;
+    	width: 100%;
+    	height: 160px;
+    	flex-grow: 4;
+    	flex-direction: row;
+    	flex-wrap: wrap;
+    	justify-content: center;
+    	padding-bottom: 25px;
+	}
+	.boxButton {
+	padding-top: 20px;
+	flex-grow: 1;
+	width: 70vw;
+	display: flex;
+	align-self: flex-end; 
+	justify-content: flex-end;
+	padding-right: 70px;
+
+}
+
+}

@@ -1,0 +1,670 @@
+.BoxDashboard{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	min-height: 70vh;
+	background-color: #212121;
+}
+.BoxMemories{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.Column{
+	width: 100%;
+	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.MemoriesRed{
+	font-family: 'Lato', sans-serif;
+	  color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	  width: 100%;
+	  border-radius: 3px;
+	/*background-color: #1297E0;*/
+	/*background-color: #e84877;*/
+	/*background-color: #2fe2da;*/
+	background-color: #1cbdbd;
+	height: 30vh;
+}
+.MemoriesGreen{
+	font-family: 'Lato', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+
+  width: 100%;
+  height:30vh;
+ /*background-color:  #E74C3C;*/
+ 
+  /*background-color: #f1b03a;*/
+  background-color: #702a87;
+  border-radius: 3px;
+}
+.MemoriesBlue{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 30vh;
+	 
+	background-color: transparent;
+	justify-content: space-around;
+}
+
+.MemoriesSmall{
+	font-family: 'Lato', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100vh;
+	height: 30vh;
+	border-radius: 3px;
+	color: white;
+	/*background-color: #2ECC71;*/
+	/*background-color: #d09be6;*/
+	/*background-color: #ffda0c;*/
+	background-color: #cd63d4;
+}
+.MemoriesFat{
+	font-family: 'Lato', sans-serif;
+	  width: 100%;
+	  /*background-color: #E74C3C;*/
+	 /* background-color: #307bec;*/
+	/* background-color: #d71a75;*/
+	background-color: #FF0070;
+	 color: white;
+	 border-radius: 3px;
+	  height: 30vh;
+}	
+.BoxCards{
+	width: 100%;
+	display: flex;
+	height: 70vh;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column;
+	}
+.Card{
+	background: linear-gradient( rgba(153, 53, 185, 0.42), rgba(91, 234, 208, 0.69), rgba(175, 41, 92,0.71));
+    margin-top: 1.2%;
+    margin-bottom: 1.2%;
+	width: 47%;
+	margin: 7px;
+	border-radius: 5px;
+	height: 30vh;
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	font-family: 'Lato', sans-serif;
+}
+.Card:hover{
+	  box-shadow: 2px 1px 2px grey;
+}
+.CardTitle{
+	background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/04/Abstract-Modern-Design-Background-.jpg);	
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 3px;
+	height: 30vh;
+	width: 40%;
+	font-family: 'Lato', sans-serif;
+
+	/*background:linear-gradient(#b9356b, #3486c1, #ca2c68);*/
+	/*background: linear-gradient(rgba(153, 53, 185, 0.93), #5bead0, #af295c);*/
+	flex-grow: 1;
+	color: white;
+	font-size: 2em;
+}
+.CardColor{
+	border-radius: 3px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient( rgba(153, 53, 185, 0.42), rgba(91, 234, 208, 0.69), rgba(175, 41, 92,0.71));
+}
+
+.CardContent{
+	font-family: 'Lato', sans-serif;
+	border-radius: 3px;
+	background-color: #e0e0e0;
+	height: 100%;
+	width: 60%;
+	flex-grow: 1;
+	
+}
+@media (max-width: 700px){
+	.MemoriesRed{
+		margin: 2px;
+	font-family: 'Lato', sans-serif;
+	  color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	  width: 100%;
+	  border-radius: 3px;
+	/*background-color: #1297E0;*/
+	/*background-color: #e84877;*/
+	/*background-color: #2fe2da;*/
+	background-color: #1cbdbd;
+	height: 30vh;
+}
+.MemoriesGreen{
+	margin: 2px;
+	font-family: 'Lato', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+
+  width: 100%;
+  height:30vh;
+ /*background-color:  #E74C3C;*/
+ 
+  /*background-color: #f1b03a;*/
+  background-color: #702a87;
+  border-radius: 3px;
+}
+	.MemoriesBlue{
+
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 120vh;
+	justify-content: center;
+	 
+	background-color: transparent;
+	justify-content: space-around;
+}
+
+.MemoriesSmall{
+	margin: 2px;
+	font-family: 'Lato', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 99%;
+	height: 30vh;
+	border-radius: 3px;
+	color: white;
+	/*background-color: #2ECC71;*/
+	/*background-color: #d09be6;*/
+	/*background-color: #ffda0c;*/
+	background-color: #cd63d4;
+}
+.MemoriesFat{
+	font-family: 'Lato', sans-serif;
+	  width: 100%;
+	  /*background-color: #E74C3C;*/
+	 /* background-color: #307bec;*/
+	/* background-color: #d71a75;*/
+	background-color: #FF0070;
+	 color: white;
+	 border-radius: 3px;
+	  height: 30vh;
+}
+}
+@media (min-width:750px) and (max-width: 1199px){
+	.BoxDashboard{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 96vw;
+	min-height: 100vh;
+	background-color: #212121;
+}
+.BoxMemories{
+	width: 95vw;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+
+.BoxCards{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: row;
+	}
+.Card{
+	background: linear-gradient( rgba(153, 53, 185, 0.42), rgba(91, 234, 208, 0.69), rgba(175, 41, 92,0.71));
+    margin-top: 1.2%;
+    margin-bottom: 1.2%;
+	width: 47%;
+	margin: 7px;
+	border-radius: 5px;
+	height: 25vh;
+	display: flex;
+	flex-direction: row;
+	font-family: 'Lato', sans-serif;
+}
+.Card:hover{
+	  box-shadow: 2px 1px 2px grey;
+}
+.CardTitle{
+	background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/04/Abstract-Modern-Design-Background-.jpg);	
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 3px;
+	height: 100%
+	width: 50%;
+	font-family: 'Lato', sans-serif;
+
+	/*background:linear-gradient(#b9356b, #3486c1, #ca2c68);*/
+	/*background: linear-gradient(rgba(153, 53, 185, 0.93), #5bead0, #af295c);*/
+	flex-grow: 1;
+	color: white;
+	font-size: 2em;
+	
+}
+.CardColor{
+	border-radius: 3px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient( rgba(153, 53, 185, 0.42), rgba(91, 234, 208, 0.69), rgba(175, 41, 92,0.71));
+}
+
+.CardContent{
+	font-family: 'Lato', sans-serif;
+	border-radius: 3px;
+	background-color: #e0e0e0;
+
+	height: 100%;
+	width: 50%;
+	flex-grow: 1;
+	
+}
+
+.MemoriesBlue{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 50%;
+	 
+	background-color: transparent;
+	justify-content: space-around;
+}
+
+.MemoriesSmall{
+	font-family: 'Lato', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 48.5%;
+	height: 48.5%;
+	border-radius: 3px;
+	color: white;
+	/*background-color: #2ECC71;*/
+	/*background-color: #d09be6;*/
+	/*background-color: #ffda0c;*/
+	background-color: #cd63d4;
+}
+.MemoriesSmall:hover{
+  box-shadow: 2px 1px 2px grey;
+}
+.MemoriesFat{
+	font-family: 'Lato', sans-serif;
+	  width: 100%;
+	  height: 49%;
+	  /*background-color: #E74C3C;*/
+	 /* background-color: #307bec;*/
+	/* background-color: #d71a75;*/
+	background-color: #FF0070;
+	 color: white;
+	 border-radius: 3px;
+	  
+}	
+.MemoriesFat:hover{
+	  box-shadow: 4px 4px 4px grey;
+}
+.MemoriesRed{
+	font-family: 'Lato', sans-serif;
+	  color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  width: 100%;
+  height: 32.5%;
+  border-radius: 3px;
+	/*background-color: #1297E0;*/
+	/*background-color: #e84877;*/
+	/*background-color: #2fe2da;*/
+	background-color: #1cbdbd;
+}
+.MemoriesRed:hover{
+	  box-shadow: 2px 1px 2px grey;
+}	
+.MemoriesGreen{
+	font-family: 'Lato', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+
+  width: 100%;
+  height: 32.5%;
+ /*background-color:  #E74C3C;*/
+ 
+  /*background-color: #f1b03a;*/
+  background-color: #702a87;
+  border-radius: 3px;
+}	
+.MemoriesGreen:hover{
+	  box-shadow: 2px 1px 2px grey;
+}
+
+.Column{
+	width: 32.5%;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+}
+
+@media (min-width: 1200px) {
+.LargeBox{
+    padding-top: 35px;
+	height: 50vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	max-width: 100vw;
+	background-color: transparent;
+	
+}
+.MediumBox{
+	font-family: 'ABeeZee', sans-serif;
+	text-align: center;
+	height: 50vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 70vw;
+	font-weight: bold;
+	font-size: 3em;
+	background-color: transparent;
+	color: white;
+	text-shadow: 3px 2px 4px #000000;
+}
+.MediumBox2{
+	min-height: 70vh;
+	display: flex;
+	flex-direction: row;
+	width: 50vw;
+	border: 0.5px solid #E0C3A5;
+}
+
+	
+.titleAbout{
+	color: #C61357;
+	text-shadow: 3px 2px 4px #E0C3A5;
+	font-weight: bold;
+	font-size: 4em;
+	font-family: 'Great Vibes', cursive;
+	width: 100%;
+	height: 170px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.content{
+	text-align: center;
+}
+.BoxSale{
+	width:80%;
+	height: 100%;
+}
+.BoxSmall{
+	width: 20%;
+	height: 100%;
+}
+.BoxInputs{
+	height: 30%;
+	width: 100%;
+}
+.BoxList{
+	height: 60%;
+	width: 100%;
+}
+.BoxAdress{
+	width: 83%;
+	height: 200px;
+	display: flex; 
+	justify-content: column;
+	flex-wrap: wrap;
+	border: 0.5px solid #E0C3A5;
+	justify-content: center;
+	margin-top: 30px;
+	align-self: center;
+	border-radius: 5px;
+}
+.BoxDescription{
+	width: 70%;
+	height: 100px;
+	border: 0.5px solid #E0C3A5;
+	display: flex;
+	justify-content: center;
+	margin-top: 4px;
+	align-self: center;
+	align-items: center;
+	border-radius: 5px;
+	border: 0.5px solid #C61357;
+}
+.BoxDescription:hover{
+	box-shadow: 3px 2px 4px #ECDAAF;
+	border: 0.5px solid #E0C3A5;
+}
+.BoxDashboard{
+	display: flex;
+	flex-direction: row;
+	width: 90vw;
+	height: 70vh;
+	background-color: #212121;
+}
+.BoxMemories{
+	flex-wrap: wrap;
+	width: 50%;
+	height: 90%;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.BoxCards{
+    padding-left: 3%;
+	width: 35%;
+	height: 90%;
+	flex-grow: 1;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	flex-direction: column;
+	}
+.Card{
+	background: linear-gradient( rgba(153, 53, 185, 0.42), rgba(91, 234, 208, 0.69), rgba(175, 41, 92,0.71));
+    margin-top: 1.2%;
+    margin-bottom: 1.2%;
+	width: 90%;
+	border-radius: 5px;
+	height: 47.9%;
+	display: flex;
+	flex-direction: row;
+	font-family: 'Lato', sans-serif;
+}
+.Card:hover{
+	  box-shadow: 2px 1px 2px grey;
+}
+.CardTitle{
+	background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/04/Abstract-Modern-Design-Background-.jpg);	
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 3px;
+	height: 100%
+	width: 30%;
+	font-family: 'Lato', sans-serif;
+
+	/*background:linear-gradient(#b9356b, #3486c1, #ca2c68);*/
+	/*background: linear-gradient(rgba(153, 53, 185, 0.93), #5bead0, #af295c);*/
+	flex-grow: 1;
+	color: white;
+	font-size: 2em;
+	
+}
+.CardColor{
+	border-radius: 3px;
+	color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient( rgba(153, 53, 185, 0.42), rgba(91, 234, 208, 0.69), rgba(175, 41, 92,0.71));
+}
+
+.CardContent{
+	font-family: 'Lato', sans-serif;
+	border-radius: 3px;
+	background-color: #e0e0e0;
+
+	height: 100%;
+	width: 70%;
+	flex-grow: 1;
+	
+}
+
+.MemoriesBlue{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	height: 50%;
+	 
+	background-color: transparent;
+	justify-content: space-around;
+}
+
+.MemoriesSmall{
+	font-family: 'Lato', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 48.5%;
+	height: 48.5%;
+	border-radius: 3px;
+	color: white;
+	/*background-color: #2ECC71;*/
+	/*background-color: #d09be6;*/
+	/*background-color: #ffda0c;*/
+	background-color: #cd63d4;
+}
+.MemoriesSmall:hover{
+  box-shadow: 2px 1px 2px grey;
+}
+.MemoriesFat{
+	font-family: 'Lato', sans-serif;
+	  width: 100%;
+	  height: 49%;
+	  /*background-color: #E74C3C;*/
+	 /* background-color: #307bec;*/
+	/* background-color: #d71a75;*/
+	background-color: #FF0070;
+	 color: white;
+	 border-radius: 3px;
+	  
+}	
+.MemoriesFat:hover{
+	  box-shadow: 4px 4px 4px grey;
+}
+.MemoriesRed{
+	font-family: 'Lato', sans-serif;
+	  color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+  width: 100%;
+  height: 32.5%;
+  border-radius: 3px;
+	/*background-color: #1297E0;*/
+	/*background-color: #e84877;*/
+	/*background-color: #2fe2da;*/
+	background-color: #1cbdbd;
+}
+.MemoriesRed:hover{
+	  box-shadow: 2px 1px 2px grey;
+}	
+.MemoriesGreen{
+	font-family: 'Lato', sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+
+  width: 100%;
+  height: 32.5%;
+ /*background-color:  #E74C3C;*/
+ 
+  /*background-color: #f1b03a;*/
+  background-color: #702a87;
+  border-radius: 3px;
+}	
+.MemoriesGreen:hover{
+	  box-shadow: 2px 1px 2px grey;
+}
+
+.Column{
+	width: 32.5%;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+}

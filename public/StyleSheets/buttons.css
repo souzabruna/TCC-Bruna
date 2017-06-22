@@ -1,0 +1,61 @@
+.buttonSmall {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: normal;
+	font-size: 1.2em;
+	box-shadow: 3px 2px 4px #B63165;
+	margin-right: 75px;
+	background-color: #E32F6C;
+	height: 50px;
+	width: 100px;
+	border-radius: 7px;
+	color: white;
+	font-family: 'Inconsolata', monospace;
+}
+.buttonSmall:hover {
+	box-shadow: 3px 2px 4px #E32F6C;
+	background-color:  #B63165;
+}
+
+.buttonMedium {
+	font-family: 'Inconsolata', monospace;
+	margin-top: 35px;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: normal;
+	font-size: 1.5em;
+    text-decoration: none;
+    background-color: #FF1158;
+    height: 90px;
+    width: 200px;
+    border-radius: 7px;
+    color: white;
+
+}
+.buttonMedium:hover {
+	box-shadow: 3px 2px 4px #E32F6C;
+	background-color:  #B63165;
+}
+.buttonSlim {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: normal;
+	font-size: 1.2em;
+	box-shadow: 3px 2px 4px #B63165;
+	margin-right: 75px;
+	background-color: #E32F6C;
+	height: 30px;
+	width: 170px;
+	border-radius: 5px;
+	color: white;
+	font-family: 'Inconsolata', monospace;
+	
+}
+.buttonSlim:hover {
+	box-shadow: 3px 2px 4px #E32F6C;
+	background-color:  #B63165;
+}

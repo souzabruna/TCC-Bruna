@@ -5,7 +5,9 @@ var Product = require('./models/product.js');
 var User= require('./models/user.js');
 var Client= require('./models/client.js');
 ///var dbURL = process.env.MONGO_URL;
-var dbURL = "mongodb://easy_sale:Easybd@ds151951.mlab.com:51951/easy_sale";
+//var dbURL = "mongodb://easy_sale:Easybd@ds151951.mlab.com:51951/easy_sale";
+var dbURL = "mongodb://aluno5-OptiPlex-990.local:27017/test";
+
 // Testa variável de ambiente
 if(!dbURL){
   console.log("ERRO : Não foi encontrada a url do Mongo. \nDefina a variável MONGO_URL com a url");
@@ -16,6 +18,7 @@ mongoose.connect(dbURL);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 
+app.use('/public', express.static(__dirname + '/public'));
 // Páginal inicial
 app.get('/', function (req, res) {
   res.send('<b>Hello World!</b>');
@@ -24,7 +27,7 @@ app.get('/', function (req, res) {
 
 //Produto
 // CREATE
-app.get('/xml/product/new/:code/:name/:price/:description', function (req, res) {
+app.get('/api/product/new/:code/:name/:price/:description', function (req, res) {
   var code =  req.param('code');
   var name =  req.param('name');
   var price = req.param('price');
@@ -43,7 +46,7 @@ app.get('/xml/product/new/:code/:name/:price/:description', function (req, res) 
 });
 
 // READ ALL
-app.get('/xml/product/', function (req, res) {
+app.get('/api/product/', function (req, res) {
   Product.find(function(error,products){
     var result = '';
     if (error){
@@ -57,7 +60,7 @@ app.get('/xml/product/', function (req, res) {
 });
 
 // READ ONE
-app.get('/xml/product/:id', function (req, res) {
+app.get('/api/product/:id', function (req, res) {
   var id = req.param('id');
   Product.find({ _id: id},function(error,product){
     var result = '';
@@ -72,7 +75,7 @@ app.get('/xml/product/:id', function (req, res) {
 });
 
 // UPDATE
-app.get('/xml/product/update/:id/:name/:price', function (req, res) {
+app.get('/api/product/update/:id/:name/:price', function (req, res) {
   var name =  req.param('name');
   var price = req.param('price');
   var id = req.param('id');
@@ -90,7 +93,7 @@ app.get('/xml/product/update/:id/:name/:price', function (req, res) {
 });
 
 // DELETE
-app.get('/xml/product/delete/:id', function (req, res) {
+app.get('/api/product/delete/:id', function (req, res) {
   var id = req.param('id');
   Product.deleteOne({ _id: id},function(error){
     var result = '';
