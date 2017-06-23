@@ -1,6 +1,6 @@
 .Container{
 	width: 90%;
-	display: flex; 
+	display: flex;
 	justify-content: column;
 	flex-wrap: wrap;
 	border: 0.5px solid #E0C3A5;
@@ -20,7 +20,7 @@
 	height: 20px;
 	flex-grow: 1;
 	width: 100%;
-	display: flex; 
+	display: flex;
 	justify-content: center;
 	}
 
@@ -29,7 +29,7 @@
 	padding-top: 30px;
 	flex-grow: 9;
 	width: 98%;
-	display: flex; 
+	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -37,7 +37,7 @@
 		background-color: rgba(247,241,241,0.93);
 
 }
-	
+
 .Group {
 	font-family: 'Lato', sans-serif;
 	display: flex;
@@ -45,7 +45,7 @@
 	flex-direction: column;
     margin: 15px;
     height: 60px;
-    font-size: 1em; 
+    font-size: 1em;
 	justify-content: center;
 }
 
@@ -68,7 +68,7 @@
 
 .span {
 	font-family: 'Lato', sans-serif;
-	
+
 
 }
 
@@ -77,9 +77,9 @@
 	flex-grow: 1;
 	width: 100%;
 	display: flex;
-	align-self: flex-end; 
+	align-self: flex-end;
 	justify-content: flex-end;
-	
+
 
 }
 .title {
@@ -93,7 +93,8 @@
 	.Container {
 		border: 0.5px solid #E0C3A5;
 		width: 70vw;
-		display: flex; 
+		
+		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
 		flex-direction: column;
@@ -102,15 +103,15 @@
 		padding-bottom: 30px;
 	}
 
-	
+
 	.TitleForm {
 		padding-bottom: 15px;
 		height: 20px;
 		flex-grow: 1;
 		width: 70vw;
-		display: flex; 
+		display: flex;
 		justify-content: center;
-		
+
 	}
 	.title {
 		color: #B63165;
@@ -122,7 +123,7 @@
 		padding-top: 25px;
 		flex-grow: 9;
 		width: 70vw;
-		display: flex; 
+		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
 		flex-direction: row;
@@ -132,7 +133,7 @@
 	.FormDescription{
 		padding-top: 25px;
 		width: 70vw;
-		display: flex; 
+		display: flex;
 		justify-content: center;
 		flex-direction: column;
 	}
@@ -142,7 +143,7 @@
 		flex-direction: column;
 	    margin: 15px;
 	    height: 60px;
-	    font-size: 1em; 
+	    font-size: 1em;
 		width: 40%;
 		padding-bottom: 0;
 
@@ -153,7 +154,7 @@
 		flex-direction: column;
 	    margin: 7px;
 	    height: 60px;
-	    font-size: 1em; 
+	    font-size: 1em;
 		width: 45%;
 		padding-bottom: 0;
 
@@ -186,7 +187,7 @@
     	flex-grow: 1;
     	padding: 5px;
 	}
-	
+
 	.ContentAdress{
 		display: flex;
     	width: 100%;
@@ -202,7 +203,7 @@
 	flex-grow: 1;
 	width: 70vw;
 	display: flex;
-	align-self: flex-end; 
+	align-self: flex-end;
 	justify-content: flex-end;
 	padding-right: 70px;
 
