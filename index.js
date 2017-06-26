@@ -169,6 +169,70 @@ app.get('/xml/user/delete/:id', function (req, res) {
   });
 });
 
+//CLIENTE
+// CREATE
+app.get('/xml/client/new/:name/:phone/:adress/:burthday', function (req, res) {
+  var name =  req.param('name');
+  var phone =  req.param('phone');
+  var adress =  req.param('adress');
+  var burthday =  req.param('burthday');
+  var newClient = new Client({name: name, phone: phone, adress: adress, burthday: burthday});
+  newClient.save(function (error, client){
+    var result  = '';
+    if (error){
+      result = "Erro ao inserir: " + error;
+    }
+    else{
+      result = "Cliente inserido: " + client.name;
+    }
+    res.send(result);
+  });
+});
+
+// READ ALL
+app.get('/xml/client/', function (req, res) {
+  Client.find(function(error,clients){
+    var result = '';
+    if (error){
+      result = "Erro ao listar: " + error;
+    }
+    else{
+      result = clients;
+    }
+    res.send(result);
+  });
+});
+
+
+// READ ONE
+app.get('/xml/client/:id', function (req, res) {
+  var id = req.param('id');
+  Client.find({ _id: id},function(error,clients){
+    var result = '';
+    if (error){
+      result = "Erro ao listar: " + error;
+    }
+    else{
+      result = clients[0];
+    }
+    res.send(result);
+  });
+});
+// DELETE
+app.get('/xml/client/delete/:id', function (req, res) {
+  var id = req.param('id');
+  Client.deleteOne({ _id: id},function(error){
+    var result = '';
+    if (error){
+      result = "Erro ao Deletar: " + error;
+    }
+    else{
+      result = "Deletado com sucesso!";
+    }
+    res.send(result);
+  });
+});
+
 
 // Start Server
 app.listen(3000, function () {
