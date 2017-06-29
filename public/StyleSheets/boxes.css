@@ -16,7 +16,7 @@
 }
 .Column{
 	width: 100%;
-	
+
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -48,7 +48,7 @@
   width: 100%;
   height:30vh;
  /*background-color:  #E74C3C;*/
- 
+
   /*background-color: #f1b03a;*/
   background-color: #702a87;
   border-radius: 3px;
@@ -59,7 +59,7 @@
 	flex-wrap: wrap;
 	width: 100%;
 	height: 30vh;
-	 
+
 	background-color: transparent;
 	justify-content: space-around;
 }
@@ -89,7 +89,7 @@
 	 color: white;
 	 border-radius: 3px;
 	  height: 30vh;
-}	
+}
 .BoxCards{
 	width: 100%;
 	display: flex;
@@ -115,7 +115,7 @@
 	  box-shadow: 2px 1px 2px grey;
 }
 .CardTitle{
-	background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/04/Abstract-Modern-Design-Background-.jpg);	
+	background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/04/Abstract-Modern-Design-Background-.jpg);
 	background-size: cover;
 	display: flex;
 	justify-content: center;
@@ -151,7 +151,29 @@
 	height: 100%;
 	width: 60%;
 	flex-grow: 1;
-	
+}
+.Product{
+	width: 45%;
+	height: 30vh;
+	display: flex;
+	flex-direction: column;
+	background-color: grey;
+	justify-content: center;
+	align-items: center;
+	border: 2px solid black;
+}
+.SectionProducts{
+	width: 100%;
+	min-height: 95vh;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+.ProductItem{
+	height: 20%;
+	width: 100%;
+	background-color: white;
 }
 @media (max-width: 700px){
 	.MemoriesRed{
@@ -182,7 +204,7 @@
   width: 100%;
   height:30vh;
  /*background-color:  #E74C3C;*/
- 
+
   /*background-color: #f1b03a;*/
   background-color: #702a87;
   border-radius: 3px;
@@ -195,7 +217,7 @@
 	width: 100%;
 	height: 120vh;
 	justify-content: center;
-	 
+
 	background-color: transparent;
 	justify-content: space-around;
 }
@@ -270,7 +292,7 @@
 	  box-shadow: 2px 1px 2px grey;
 }
 .CardTitle{
-	background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/04/Abstract-Modern-Design-Background-.jpg);	
+	background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/04/Abstract-Modern-Design-Background-.jpg);
 	background-size: cover;
 	display: flex;
 	justify-content: center;
@@ -286,7 +308,7 @@
 	flex-grow: 1;
 	color: white;
 	font-size: 2em;
-	
+
 }
 .CardColor{
 	border-radius: 3px;
@@ -308,7 +330,7 @@
 	height: 100%;
 	width: 50%;
 	flex-grow: 1;
-	
+
 }
 
 .MemoriesBlue{
@@ -317,7 +339,7 @@
 	flex-wrap: wrap;
 	width: 100%;
 	height: 50%;
-	 
+
 	background-color: transparent;
 	justify-content: space-around;
 }
@@ -350,8 +372,8 @@
 	background-color: #FF0070;
 	 color: white;
 	 border-radius: 3px;
-	  
-}	
+
+}
 .MemoriesFat:hover{
 	  box-shadow: 4px 4px 4px grey;
 }
@@ -372,7 +394,7 @@
 }
 .MemoriesRed:hover{
 	  box-shadow: 2px 1px 2px grey;
-}	
+}
 .MemoriesGreen{
 	font-family: 'Lato', sans-serif;
 	display: flex;
@@ -384,11 +406,11 @@
   width: 100%;
   height: 32.5%;
  /*background-color:  #E74C3C;*/
- 
+
   /*background-color: #f1b03a;*/
   background-color: #702a87;
   border-radius: 3px;
-}	
+}
 .MemoriesGreen:hover{
 	  box-shadow: 2px 1px 2px grey;
 }
@@ -412,7 +434,7 @@
 	flex-direction: column;
 	max-width: 100vw;
 	background-color: transparent;
-	
+
 }
 .MediumBox{
 	font-family: 'ABeeZee', sans-serif;
@@ -436,7 +458,7 @@
 	border: 0.5px solid #E0C3A5;
 }
 
-	
+
 .titleAbout{
 	color: #C61357;
 	text-shadow: 3px 2px 4px #E0C3A5;
@@ -471,7 +493,7 @@
 .BoxAdress{
 	width: 83%;
 	height: 200px;
-	display: flex; 
+	display: flex;
 	justify-content: column;
 	flex-wrap: wrap;
 	border: 0.5px solid #E0C3A5;
@@ -537,7 +559,7 @@
 	  box-shadow: 2px 1px 2px grey;
 }
 .CardTitle{
-	background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/04/Abstract-Modern-Design-Background-.jpg);	
+	background-image: url(https://images.freecreatives.com/wp-content/uploads/2016/04/Abstract-Modern-Design-Background-.jpg);
 	background-size: cover;
 	display: flex;
 	justify-content: center;
@@ -553,7 +575,7 @@
 	flex-grow: 1;
 	color: white;
 	font-size: 2em;
-	
+
 }
 .CardColor{
 	border-radius: 3px;
@@ -575,7 +597,7 @@
 	height: 100%;
 	width: 70%;
 	flex-grow: 1;
-	
+
 }
 
 .MemoriesBlue{
@@ -584,7 +606,7 @@
 	flex-wrap: wrap;
 	width: 100%;
 	height: 50%;
-	 
+
 	background-color: transparent;
 	justify-content: space-around;
 }
@@ -617,8 +639,8 @@
 	background-color: #FF0070;
 	 color: white;
 	 border-radius: 3px;
-	  
-}	
+
+}
 .MemoriesFat:hover{
 	  box-shadow: 4px 4px 4px grey;
 }
@@ -639,7 +661,7 @@
 }
 .MemoriesRed:hover{
 	  box-shadow: 2px 1px 2px grey;
-}	
+}
 .MemoriesGreen{
 	font-family: 'Lato', sans-serif;
 	display: flex;
@@ -651,11 +673,11 @@
   width: 100%;
   height: 32.5%;
  /*background-color:  #E74C3C;*/
- 
+
   /*background-color: #f1b03a;*/
   background-color: #702a87;
   border-radius: 3px;
-}	
+}
 .MemoriesGreen:hover{
 	  box-shadow: 2px 1px 2px grey;
 }

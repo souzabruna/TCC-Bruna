@@ -175,7 +175,7 @@ app.get('/xml/client/new/:name/:phone/:adress/:burthday', function (req, res) {
   var name =  req.param('name');
   var phone =  req.param('phone');
   var adress =  req.param('adress');
-  var burthday =  req.param('burthday');
+  var burthdayall =  req.param('burthday');
   var newClient = new Client({name: name, phone: phone, adress: adress, burthday: burthday});
   newClient.save(function (error, client){
     var result  = '';
