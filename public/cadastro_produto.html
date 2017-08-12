@@ -10,6 +10,10 @@
   <link rel="stylesheet" type="text/css" href="StyleSheets/form.css">
   <link rel="stylesheet" type="text/css" href="StyleSheets/boxes.css">
   <link rel="stylesheet" type="text/css" href="StyleSheets/utilites.css">
+  <link rel="stylesheet" type="text/css" href="StyleSheets/navbar.css">
+  <link rel="stylesheet" type="text/css" href="modal.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
@@ -17,12 +21,49 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dekko" rel="stylesheet">
-
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.min.js"></script>
 
 </head>
 <body>
+
+<div class="Modal" id="modsus">
+<div class="Modal-overlay"></div>
+   <div id="cont" class="Modal-content">
+      <div class="modalHeader">
+        <div class="icon-modal bt"><img src="StyleSheets/close.png" width="30px" height="30px"></div>
+      </div>
+      <div class="modal-body">
+        <div ><img src="StyleSheets/sus.png" width="120px" height="120px"></div>
+        <h2 class="textModal">Inserido com sucesso!</h2>
+    </div>
+    <div class="buttonXSmall bt">oK</div>
+  </div>
+</div>
+</div>
+
+<div class="NavbarDashboard">
+    <div class="BoxLogo">
+      <div class="BoxImage">
+        
+      </div>
+      
+    </div>
+<input type="checkbox" id="check">
+    <label id="icone" for="check"><i class="material-icons" style="color: white; font-size: 2em;">menu</i></label>
+    
+    <ul class="NavBox">
+      <li class="DivLink"><a href="dashboard.html"> <i class="material-icons">home</i> Início</a></li>
+      <li class="DivLink"> <i class="material-icons">add_shopping_cart</i> Vendas</li>
+      <a class="DivLink" href="cadastro_cliente.html"> <i class="material-icons">person_add</i>Cadastros</a>
+      <li class="DivLink"><i class="material-icons">settings</i>Configurações</li>
+      <li class="DivLink"> <i class="material-icons">business_center</i>Consignado</li>
+      
+    </ul>
+    
+  </div>
+  <section class="sale">
   <div class="sectionForm" id="app">
     <div class="Container">
       <div class="TitleForm">
@@ -45,31 +86,49 @@
         <span class="span">Descrição</span>
         <input class="input" v-model="product.description"></input>
       </div>
+      <div class="Group">
+        <span class="span">Quantidade</span>
+        <input class="input" v-model="product.quantidade"></input>
+      </div>
+      <div class="Group">
+        <span class="span">Categoria</span>
+        <input class="input"></input>
+      </div>
       <div class="boxButton" @click="saveProduct()">
         <div class="buttonSmall">Cadastrar</div>
       </div>
     </div>
   </div>
 </div>
+</section>
 </body>
 <script>
 new Vue({
   el: '#app',
   data:{
-    product: {code: "",name: "", price: "", description: ""}
+    product: {code: "",name: "", price: "", description: "", quantidade: ""}
   },
   methods: {
     saveProduct(){
       var product = this.product
-      this.$http.get(`/api/product/new/${product.code}/${product.name}/${product.price}/${product.description}`).then(response => {
+      this.$http.get(`/api/product/new/${product.code}/${product.name}/${product.price}/${product.description}/${product.quantidade}`).then(response => {
         console.log(response)
-        alert(response.body)
+      /*  alert(response.body)*/
+       
+        if(response.body === "Produto inserido"){  
+          $('#modsus').toggle('is-toggle');
+        }
+   
+
       }, error => {
         alert(error.body)
       });
     }
   },
 })
+$('.bt').click(function(){
+    $('#modsus').toggle('is-toggle');
+    });
 </script>
 
 </html>

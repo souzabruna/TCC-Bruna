@@ -27,19 +27,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.min.js"></script>
 </head>
 <body>
-<div class="Modal" id="modsus">
-<div class="Modal-overlay"></div>
-   <div id="cont" class="Modal-content">
-      <div class="modalHeader">
-        <div class="icon-modal bts"><img src="StyleSheets/close.png" width="30px" height="30px"></div>
-      </div>
-      <div class="modal-body">
-        <div ><img src="StyleSheets/sus.png" width="120px" height="120px"></div>
-        <h2 class="textModal">Deletado com sucesso!</h2>
-    </div>
-    <div class="buttonXSmall bts">oK</div>
-  </div>
-</div>
 
   <div class="NavbarDashboard">
     <div class="BoxLogo">
@@ -65,19 +52,14 @@
   <section class="sale">
 <div class="SectionProducts">
            <div class="Product" id="CardProduct">
-
-            <div class="headerCard"><div class="name"><span></span></div></div>
-            
-            <div class="div">    
-            <div class="ProductMore"><h1>Formas de pagamento</h1></div>
-               <div class="ProductItem">  <div class="ProductSubitem code">Código: <span></span></div><div class="ProductSubitem price">Valor: <span></span></div></div>
-            <div class="ProductItem"> <div class="ProductDescription description"> Descrição: <span></span></div></div>
+            <div class="ProductItem code">  Código: <span></span></div>
+            <div class="ProductItem name">  Nome: <span></span></div>
+            <div class="ProductItem price"> Preço: <span></span></div>
+            <div class="ProductItem description"> Descrição: <span></span></div>
             <div class="BoxButtonProduct">
               <div class="buttonXSmall BtnEdit">Editar</div>
               <div class="buttonXSmall BtnDelete">Excluir</div>
             </div>
-            </div>
-
           </div>
         </div>
       </div>
@@ -96,7 +78,6 @@ $(document).ready(function(){
             $('#CardProduct').clone().appendTo('.SectionProducts');
             var divProduct = $('#CardProduct').last();
             divProduct.attr('id',obj['code']);
-           divProduct.find('.code span').html(obj['code']);
             divProduct.find('.name span').html(obj['name']);
              divProduct.find('.price span').html(obj['price']);
              divProduct.find('.description span').html(obj['description']);
@@ -112,8 +93,9 @@ $(document).ready(function(){
               url: "/api/product/"+code
             }).done(function(data){
                 console.log(data); //data é a resposta 
+                alert(data);
                 if(data === "Deletado com sucesso!"){
-                  $('#modsus').toggle('is-toggle');
+                  console.log("cheguei");
                     div.hide();
                 }
                 });//FIM DO AJAX
@@ -127,20 +109,13 @@ $(document).ready(function(){
              var description = $(this).parents('.Product').find('.description span').html();
              window.location.assign("http://localhost:3000/public/atualizar_produto.html?code="+code+"&name="+name+"&price="+price+"&description="+description);
 
-        }); //fim BtnEdit
 
-        $('.headerCard').click(function(){
-	    		$(this).parents('.Product').find('.ProductMore').toggle('is-toggle');
-			});
+
+        });
     });
 
 
   });
-
-
-$('.bts').click(function(){
-    $('#modsus').toggle('is-toggle');
-});
 
 </script>
 

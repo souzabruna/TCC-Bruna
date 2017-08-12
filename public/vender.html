@@ -10,6 +10,8 @@
   <link rel="stylesheet" type="text/css" href="StyleSheets/form.css">
   <link rel="stylesheet" type="text/css" href="StyleSheets/boxes.css">
    <link rel="stylesheet" type="text/css" href="StyleSheets/navbar.css">
+    <link rel="stylesheet" type="text/css" href="modal.css">
+
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -23,64 +25,121 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dekko" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.min.js"></script>
+
 </head>
 <body>
-<div class="NavbarDashboard">
-		<div class="BoxLogo">
-			<div class="BoxImage">
-				
-			</div>
-			
-		</div>
 
+<div class="Modal" id="modsus">
+<div class="Modal-overlay"></div>
+   <div id="cont" class="Modal-content">
+      <div class="modalHeader">
+        <div class="icon-modal bts"><img src="StyleSheets/close.png" width="30px" height="30px"></div>
+      </div>
+      <div class="modal-body">
+        <div ><img src="StyleSheets/sus.png" width="120px" height="120px"></div>
+        <h2 class="textModal">Venda efetuada com sucesso!</h2>
+    </div>
+    <div class="buttonXSmall bts">oK</div>
+  </div>
+</div>
+
+
+<div class="NavbarDashboard">
+    <div class="BoxLogo">
+      <div class="BoxImage">
+        
+      </div>
+      
+    </div>
 <input type="checkbox" id="check">
-		<label id="icone" for="check"><i class="material-icons" style="color: white; font-size: 2em;">menu</i></label>
-		
-		<ul class="NavBox">
-		    <a class="DivLink" href="/index.php"><i class="material-icons">home</i>Início</a>
-			<li class="DivLink"> <i class="material-icons">receipt</i> Relatorios</li>
-			<li class="DivLink"> <i class="material-icons">add_shopping_cart</i> Vendas</li>
-			<li class="DivLink"> <i class="material-icons">person_add</i>Cadastros</li>
-			<li class="DivLink"> <i class="material-icons">business_center</i>Consignado</li>
-			
-		</ul>
-		
-	</div>
+    <label id="icone" for="check"><i class="material-icons" style="color: white; font-size: 2em;">menu</i></label>
+    
+    <ul class="NavBox">
+      <li class="DivLink"><a href="dashboard.html"> <i class="material-icons">home</i> Início</a></li>
+      <li class="DivLink"> <i class="material-icons">add_shopping_cart</i> Vendas</li>
+      <a class="DivLink" href="cadastro_cliente.html"> <i class="material-icons">person_add</i>Cadastros</a>
+      <li class="DivLink"><i class="material-icons">settings</i>Configurações</li>
+      <li class="DivLink"> <i class="material-icons">business_center</i>Consignado</li>
+      
+    </ul>
+    
+  </div>
 	<div class="sale">
-		<div class="Container">
+		<div class="Container " >
+		<div class="SectionForm" id="app">
 			<div class="TitleForm">
 	        	<h1 class="title">Realizar venda</h1>
 	        </div>
 			<div class="Form">
 				<div class="Group">
 					<span class="span">Código de vendedor</span>
-					<input class="input"></input>
+					<input class="input" v-model="venda.vendedor"></input>
 				</div>
 				<div class="Group">
-					<span class="span">Nome do vendedor</span>
-					<input class="input"></input>
+					<span class="span">Forma de pagamento</span>
+					<input class="input" v-model="venda.forma_pagamento"></input>
 				</div>	
 				
 				<div class="Group">
 					<span class="span">Codigo do produto</span>
-					<input class="input"></input>
+					<input class="input" v-model="venda.produto"></input>
 				</div>	
 
 				<div class="Group">
 					<span class="span">Quantidade</span>
-					<input class="input"></input><div><i class="material-icons">add_box</i></div>
+					<div style="display: flex; flex-direction: row; align-items: center;"><input class="input" style="width: 90%;" v-model="venda.valor"></input><div><i class="material-icons" style="font-size: 3em;">add_box</i></div></div>
 				</div>
+				<div class="Group">
+					<span class="span">Valor</span>
+					<input class="input"></input>
+				</div>	
+				<div class="Group">
+					<span class="span">Data</span>
+					<input class="input"></input>
+				</div>	
 				</div>
-				<div class="BoxDescription">
-					
-				</div>
+				
 
 			</div>
-			<div class="boxButton">
-				<div class="buttonSmall">Cadastrar</div><
+			<div class="boxButton" style="margin-top: 40px;">
+				<div class="buttonSmall bts" @click="saveVenda()" >Vender</div>
+			</div> 
 			</div>
 		</div>	
 	</div>
+
 	  
 </body>
+<script type="text/javascript">
+	new Vue({
+  el: '#app',
+  data:{
+    venda: {vendedor: "", forma_pagamento: "", produto: "", valor: ""}
+  },
+  methods: {
+    saveVenda(){
+      var venda = this.venda
+      this.$http.get(`/api/venda/new/${venda.vendedor}/${venda.produto}/${venda.forma_pagamento}/${venda.valor}`).then(response => {
+        console.log(response)
+      /*  alert(response.body)*/
+       
+        
+          $('#modsus').toggle('is-toggle');
+   
+
+      }, error => {
+        alert(error.body)
+
+          $('#modsus').toggle('is-toggle');
+      });
+    }
+  },
+})
+	$('.bts').click(function(){
+    $('#modsus').toggle('is-toggle');
+    });
+</script>
 </html>

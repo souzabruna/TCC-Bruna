@@ -3,10 +3,12 @@ var app = express();
 var mongoose = require('mongoose');
 var Product = require('./models/product.js');
 var User= require('./models/user.js');
-var Client= require('./models/client.js');
-///var dbURL = process.env.MONGO_URL;
-//var dbURL = "mongodb://easy_sale:Easybd@ds151951.mlab.com:51951/easy_sale";
-var dbURL = "mongodb://aluno5-OptiPlex-990.local:27017/test";
+var Categoria= require('./models/categoria.js');
+var Cliente= require('./models/cliente.js');
+var Comissao= require('./models/comissao.js');
+var Venda= require('./models/venda.js');
+var Fornecedor= require('./models/fornecedor.js');
+var dbURL = "mongodb://easy_sale:Easybd@ds151951.mlab.com:51951/easy_sale";
 
 // Testa variável de ambiente
 if(!dbURL){
@@ -27,19 +29,20 @@ app.get('/', function (req, res) {
 
 //Produto
 // CREATE
-app.get('/api/product/new/:code/:name/:price/:description', function (req, res) {
+app.get('/api/product/new/:code/:name/:price/:description/:quantidade', function (req, res) {
   var code =  req.param('code');
   var name =  req.param('name');
   var price = req.param('price');
   var description =  req.param('description');
-  var newPoduct = new Product({code: parseInt(code), name: name, price: parseInt(price), description: description});
+   var quantidade =  req.param('quantidade');
+  var newPoduct = new Product({code: parseInt(code), name: name, price: parseInt(price), description: description, quantidade: quantidade});
   newPoduct.save(function (error, prod) {
     var result  = '';
     if (error){
       result = "Erro ao inserir: " + error;
     }
     else{
-      result = "Produto inserido: " + prod.name;
+      result = "Produto inserido";
     }
     res.send(result);
   });
@@ -75,12 +78,13 @@ app.get('/api/product/:id', function (req, res) {
 });
 
 // UPDATE
-app.get('/api/product/update/:id/:name/:price', function (req, res) {
+app.put('/api/product/:code/:name/:price/:description', function (req, res) {
   var name =  req.param('name');
   var price = req.param('price');
-  var id = req.param('id');
+  var code = req.param('code');
+  var description = req.param('description');
 
-  Product.update({ _id: id},{name: name, price: price},function(error){
+  Product.update({ code: code},{name: name, price: price, description: description},function(error){
     var result = '';
     if (error){
       result = "Erro ao Atualizar: " + error;
@@ -93,9 +97,9 @@ app.get('/api/product/update/:id/:name/:price', function (req, res) {
 });
 
 // DELETE
-app.get('/api/product/delete/:id', function (req, res) {
-  var id = req.param('id');
-  Product.deleteOne({ _id: id},function(error){
+app.delete('/api/product/:code', function (req, res) {
+  var code = req.param('code');
+  Product.deleteOne({ code: code},function(error){
     var result = '';
     if (error){
       result = "Erro ao Deletar: " + error;
@@ -139,6 +143,23 @@ app.get('/xml/user/', function (req, res) {
   });
 });
 
+//user
+//atualizar
+app.put('/api/user/:code/:name', function (req, res) {
+  var name =  req.param('name');
+  var code = req.param('code');
+
+  User.update({ code: code},{name: name}, function(error){
+    var result = '';
+    if (error){
+      result = "Erro ao Atualizar: " + error;
+    }
+    else{
+      result = "Atualizado com sucesso!";
+    }
+    res.send(result);
+  });
+});
 
 // READ ONE
 app.get('/xml/user/:id', function (req, res) {
@@ -155,9 +176,9 @@ app.get('/xml/user/:id', function (req, res) {
   });
 });
 // DELETE
-app.get('/xml/user/delete/:id', function (req, res) {
-  var id = req.param('id');
-  User.deleteOne({ _id: id},function(error){
+app.delete('/api/user/:code', function (req, res) {
+  var code = req.param('code');
+  User.deleteOne({ code: code},function(error){
     var result = '';
     if (error){
       result = "Erro ao Deletar: " + error;
@@ -169,59 +190,208 @@ app.get('/xml/user/delete/:id', function (req, res) {
   });
 });
 
-//CLIENTE
+
+//cliente
 // CREATE
-app.get('/xml/client/new/:name/:phone/:adress/:burthday', function (req, res) {
-  var name =  req.param('name');
-  var phone =  req.param('phone');
-  var adress =  req.param('adress');
-  var burthdayall =  req.param('burthday');
-  var newClient = new Client({name: name, phone: phone, adress: adress, burthday: burthday});
-  newClient.save(function (error, client){
+app.get('/api/cliente/new/:id/:nome/:aniversario/:email/:endereco/:telefone', function (req, res) {
+  var id =  req.param('id');
+  var nome =  req.param('nome');
+  var aniversario =  req.param('aniversario');
+  var email = req.param('email');
+  var endereco =  req.param('endereco');
+  var telefone =  req.param('telefone');
+  var newCliente = new Cliente({id: id, nome: nome, aniversario: aniversario, email: email, endereco: endereco, telefone: telefone});
+  newCliente.save(function (error, cliente) {
     var result  = '';
     if (error){
       result = "Erro ao inserir: " + error;
     }
     else{
-      result = "Cliente inserido: " + client.name;
+      result = "Cliente inserido: " + cliente.nome;
+    }
+    res.send(result);
+  });
+});
+
+//listar
+app.get('/api/cliente/', function (req, res) {
+  Cliente.find(function(error,clientes){
+    var result = '';
+    if (error){
+      result = "Erro ao listar: " + error;
+    }
+    else{
+      result = clientes;
+    }
+    res.send(result);
+  });
+});
+
+ //delete
+app.delete('/api/cliente/:id', function (req, res) {
+  var id = req.param('id');
+  Cliente.deleteOne({ id: id},function(error){
+    var result = '';
+    if (error){
+      result = "Erro ao Deletar: " + error;
+    }
+    else{
+      result = "Deletado com sucesso!";
+    }
+    res.send(result);
+  });
+});
+
+// UPDATE
+app.put('/api/cliente/:id/:nome/:aniversario/:endereco/:telefone/:email', function (req, res) {
+  var nome =  req.param('nome');
+  var aniversario = req.param('aniversario');
+  var id = req.param('id');
+  var endereco = req.param('endereco');
+  var telefone = req.param('telefone');
+  var email = req.param('email');
+
+  Cliente.update({ id: id},{nome: nome, aniversario: aniversario, endereco: endereco, telefone: telefone, email: email},function(error){
+    var result = '';
+    if (error){
+      result = "Erro ao Atualizar: " + error;
+    }
+    else{
+      result = "Atualizado com sucesso!";
+    }
+    res.send(result);
+  });
+});
+
+
+//Fornecedor
+// CREATE
+app.get('/api/fornecedor/new/:code/:name/:cnpj/:endereco/:telefone/:email', function (req, res) {
+  var code =  req.param('code');
+  var name =  req.param('name');
+  var cnpj =  req.param('cnpj');
+  var endereco =  req.param('endereco');
+  var telefone =  req.param('telefone');
+  var email =  req.param('email');
+  var newFornecedor = new Fornecedor({code: parseInt(code), name: name, cnpj: cnpj, endereco: endereco, telefone: telefone, email: email});
+  newFornecedor.save(function (error, fornecedor) {
+    var result  = '';
+    if (error){
+      result = "Erro ao inserir: " + error;
+    }
+    else{
+      result = "Fornecedor inserido: " + fornecedor.name;
+    }
+    res.send(result);
+  });
+});
+
+
+//fornecedor
+//listar
+// READ ALL
+app.get('/api/fornecedor/', function (req, res) {
+  Fornecedor.find(function(error,fornecedors){
+    var result = '';
+    if (error){
+      result = "Erro ao listar: " + error;
+    }
+    else{
+      result = fornecedors;
+    }
+    res.send(result);
+  });
+});
+//delete
+app.delete('/api/fornecedor/:code', function (req, res) {
+  var code = req.param('code');
+  Fornecedor.deleteOne({ code: code},function(error){
+    var result = '';
+    if (error){
+      result = "Erro ao Deletar: " + error;
+    }
+    else{
+      result = "Deletado com sucesso!";
+    }
+    res.send(result);
+  });
+});
+
+// UPDATE
+app.put('/api/fornecedor/:code/:name/:cnpj/:endereco/:telefone/:email', function (req, res) {
+  var name =  req.param('name');
+  var cnpj = req.param('cnpj');
+  var code = req.param('code');
+  var endereco = req.param('endereco');
+  var telefone = req.param('telefone');
+  var email = req.param('email');
+
+  Fornecedor.update({ code: code},{name: name, cnpj: cnpj, endereco: endereco, telefone: telefone, email: email},function(error){
+    var result = '';
+    if (error){
+      result = "Erro ao Atualizar: " + error;
+    }
+    else{
+      result = "Atualizado com sucesso!";
+    }
+    res.send(result);
+  });
+});
+
+//Categoria
+// CREATE
+app.get('/api/categoria/new/:code/:name', function (req, res) {
+  var code =  req.param('code');
+  var name =  req.param('name');
+  var newCategoria = new Categoria({code: parseInt(code), name: name});
+  newCategoria.save(function (error, categoria){
+    var result  = '';
+    if (error){
+      result = "Erro ao inserir: " + error;
+    }
+    else{
+      result = "Categoria inserida: " + categoria.name;
     }
     res.send(result);
   });
 });
 
 // READ ALL
-app.get('/xml/client/', function (req, res) {
-  Client.find(function(error,clients){
+app.get('/api/categoria/', function (req, res) {
+  Categoria.find(function(error,categorias){
     var result = '';
     if (error){
       result = "Erro ao listar: " + error;
     }
     else{
-      result = clients;
+      result = categorias;
     }
     res.send(result);
   });
 });
 
 
-// READ ONE
-app.get('/xml/client/:id', function (req, res) {
-  var id = req.param('id');
-  Client.find({ _id: id},function(error,clients){
+//atualizar
+app.put('/api/categoria/:code/:name', function (req, res) {
+  var name =  req.param('name');
+  var code = req.param('code');
+
+  Categoria.update({ code: code},{name: name}, function(error){
     var result = '';
     if (error){
-      result = "Erro ao listar: " + error;
+      result = "Erro ao Atualizar: " + error;
     }
     else{
-      result = clients[0];
+      result = "Atualizado com sucesso!";
     }
     res.send(result);
   });
 });
+
 // DELETE
-app.get('/xml/client/delete/:id', function (req, res) {
-  var id = req.param('id');
-  Client.deleteOne({ _id: id},function(error){
+app.delete('/api/categoria/:code', function (req, res) {
+  var code = req.param('code');
+  Categoria.deleteOne({ code: code},function(error){
     var result = '';
     if (error){
       result = "Erro ao Deletar: " + error;
@@ -233,6 +403,55 @@ app.get('/xml/client/delete/:id', function (req, res) {
   });
 });
 
+//Comissao
+// CREATE
+app.get('/api/comissao/new/:vendedor/:valor', function (req, res) {
+  var vendedor =  req.param('vendedor');
+  var valor =  req.param('valor');
+  var newComissao = new Comissao({vendedor: vendedor, valor: valor});
+  newComissao.save(function (error, categoria){
+    var result  = '';
+    if (error){
+      result = "Erro ao inserir: " + error;
+    }
+    else{
+      result = "Categoria inserida: " + comissao.vendedor;
+    }
+    res.send(result);
+  });
+});
+
+//Venda
+// CREATE
+app.get('/api/venda/new/:id/:vendedor/:produto/:forma_pagamento/:valor/:data', function (req, res) {
+  var vendedor =  req.param('vendedor');
+  var valor =  req.param('valor');
+   var id =  req.param('id');
+  var forma_pagamento =  req.param('forma_pagamento');
+   var produto =  req.param('produto');
+  var data =  req.param('data');
+  var newVenda = new Venda({vendedor: vendedor, valor: valor, id: id, forma_pagamento: forma_pagamento, data: data, produto: produto});
+  newVenda.save(function (error, venda){
+    var result  = '';
+    if (error){
+      result = "Erro ao inserir: " + error;
+    }
+    else{
+      result = "venda inserida: " + venda.vendedor;
+    }
+    res.send(result);
+  });
+  Product.update({ code: produto},{quantidade: valor}, function(error){
+    var result = '';
+    if (error){
+      result = "Erro ao Atualizar: " + error;
+    }
+    else{
+      result = "Atualizado com sucesso!";
+    }
+    res.send(result);
+  });
+});
 
 // Start Server
 app.listen(3000, function () {

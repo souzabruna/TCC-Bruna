@@ -10,6 +10,7 @@
   <link rel="stylesheet" type="text/css" href="StyleSheets/form.css">
   <link rel="stylesheet" type="text/css" href="StyleSheets/boxes.css">
    <link rel="stylesheet" type="text/css" href="StyleSheets/navbar.css">
+   <link rel="stylesheet" type="text/css" href="modal.css">
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -23,8 +24,56 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dekko" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
+
+
+<div class="Modal" id="moder">
+<div class="Modal-overlay"></div>
+   <div id="cont" class="Modal-content">
+  		<div class="modalHeader">
+  			<div class="icon-modal btnF"><img src="StyleSheets/close.png" width="30px" height="30px"></div>
+  		</div>
+  		<div class="modal-body">
+  			<div ><img src="StyleSheets/err.png" width="120px" height="120px"></div>
+  			<h2 class="textModal">Erro ao inserir!</h2>
+ 		</div>
+ 		<div class="buttonXSmall btnF">oK</div>
+	</div>
+</div>
+
+<div class="Modal" id="modsus">
+<div class="Modal-overlay"></div>
+   <div id="cont" class="Modal-content">
+  		<div class="modalHeader">
+  			<div class="icon-modal bt"><img src="StyleSheets/close.png" width="30px" height="30px"></div>
+  		</div>
+  		<div class="modal-body">
+  			<div ><img src="StyleSheets/sus.png" width="120px" height="120px"></div>
+  			<h2 class="textModal">Inserido com sucesso!</h2>
+ 		</div>
+ 		<div class="buttonXSmall bt">oK</div>
+	</div>
+</div>
+
+<div class="Modal" id="mod">
+<div class="Modal-overlay"></div>
+   <div id="cont" class="Modal-content">
+  		<div class="modalHeader">
+  			<div class="icon-modal bt"><img src="StyleSheets/close.png" width="30px" height="30px"></div>
+  		</div>
+  		<div class="modal-body">
+  			<div ><img src="StyleSheets/alerta.png" width="120px" height="120px"></div>
+  			<h2 class="textModal">Produto em baixa quantidade!</h2>
+ 		</div>
+ 		<div class="buttonXSmall bt">oK</div>
+	</div>
+</div>
+
+
+
+
 
 	<div class="NavbarDashboard">
 		<div class="BoxLogo">
@@ -38,7 +87,7 @@
 		<label id="icone" for="check"><i class="material-icons" style="color: white; font-size: 2em;">menu</i></label>
 		
 		<ul class="NavBox">
-			<li class="DivLink"> <i class="material-icons">receipt</i> Relatorios</li>
+			<li class="DivLink"><a href="dashboard.html"> <i class="material-icons">home</i> Início</a></li>
 			<li class="DivLink"> <i class="material-icons">add_shopping_cart</i> Vendas</li>
 			<a class="DivLink" href="cadastro_cliente.html"> <i class="material-icons">person_add</i>Cadastros</a>
 			<li class="DivLink"><i class="material-icons">settings</i>Configurações</li>
@@ -54,18 +103,20 @@
 					
 					<div class="Column">
 						<div class="MemoriesRed">
-						<i class="material-icons" style="font-size:2.5em; font-weight: bold;">add_shopping_cart</i>
-						<span> Vender</span>
+						<a class="DivLinks u-width-100" href="vender.html"><i class="material-icons" style="font-size:2.5em; font-weight: bold;">add_shopping_cart</i>
+						<span> Vender</span></a>
 							
 						</div>
 						<div class="MemoriesGreen">
-							 <i class="material-icons" style="font-size: 2.5em;">business_center</i>
-							 <span>Montar Consignado</span>
+							 <a class="DivLinks u-width-100" href="listar_clientes.html"><i class="material-icons" style="font-size: 1.7em" >view_list</i>
+							</br>
+							<span>Listar clientes</span></a>
 							
 						</div>
 						<div class="MemoriesRed">
-						<i class="material-icons" style="font-size: 2.5em">create</i>
-						<span>Editar metas</span>
+							<a class="DivLinks u-width-100" href="listar_usuarios.html"><i class="material-icons" style="font-size: 1.7em" >view_list</i>
+							</br>
+							<span>Listar vendedores</span></a>
 							
 						</div>
 					</div>
@@ -82,33 +133,43 @@
 								
 							</div>
 							<div class="MemoriesSmall">
+							<a class="DivLinks" href="cadastro_fornecedor.html"><i class="material-icons" style="font-size: 1.4em">group_add</i></br>
+								<span style="font-size: 0.9em">Novo fornecedor</span></a>
 								
 							</div>
 							<div class="MemoriesSmall">
-								
+								<a class="DivLinks" href="cadastro_usuario.html"><i class="material-icons" style="font-size: 1.4em">person_add</i></br>
+								<span style="font-size: 0.9em">Novo vendedor</span></a>
 							</div>
 							
 						</div>
 						
-						<div class="MemoriesFat">
+						<div class="MemoriesFat btnF">
 							
 						</div>
 					</div>
 					<div class="Column">
 						<div class="MemoriesRed">
-							
+							<a class="DivLinks u-width-100" href="cadastro_cliente.html"><i class="material-icons" style="font-size: 1.7em">person_add</i></br>
+							<span>Cadastrar cliente</span></a>
 						</div>
 						<div class="MemoriesGreen">
+							<a class="DivLinks u-width-100" href="cadastro_produto.html"><i class="material-icons"  style="font-size: 1.7em">add_circle</i>
+							</br>
+							<span>Cadastrar produto</span></a>
 						</div>
 						
 						<div class="MemoriesRed">
+							<a class="DivLinks u-width-100" href="listar_produto.html"><i class="material-icons" style="font-size: 1.7em" >view_list</i>
+							</br>
+							<span>Listar produtoss</span></a>
 					    </div>
 					</div>
 				</div>
 				<div class="BoxCards">
 				
 				<div class="Card">
-					<div class= "CardTitle">
+					<div class= "CardTitle bt">
 						 <div class="CardColor">
 							<i class="material-icons" style="font-size: 1.5em; ">assessment</i>
 							<span style="font-size:.5em;">Meta</span>
@@ -139,4 +200,13 @@
 	</section>
 
 </body>
+<script type="text/javascript">
+	$('.bt').click(function(){
+    $('#mod').toggle('is-toggle');
+});
+
+	$('.btnF').click(function(){
+    $('#moder').toggle('is-toggle');
+});
+</script>
 </html>
