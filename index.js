@@ -63,9 +63,9 @@ app.get('/api/product/', function (req, res) {
 });
 
 // READ ONE
-app.get('/api/product/:id', function (req, res) {
-  var id = req.param('id');
-  Product.find({ _id: id},function(error,product){
+app.get('/api/product/:code', function (req, res) {
+  var code = req.param('code');
+  Product.find({ code: code},function(error,product){
     var result = '';
     if (error){
       result = "Erro ao listar: " + error;
