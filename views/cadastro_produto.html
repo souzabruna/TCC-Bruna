@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>cadastro de produto</title>
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/home.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/buttons.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/sections.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/form.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/boxes.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/navbar.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/utilites.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/modal.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.min.js"></script>
+        <script language="JavaScript" src="../public/scripts/cadastro_produto.js"></script>
+    </head>
+    <body>
+        <div class="Modal" id="modsus">
+            <div class="Modal-overlay"></div>
+            <div id="cont" class="Modal-content">
+                <div class="modalHeader">
+                    <div class="icon-modal bt"><img src="../public/images/close.png" width="30px" height="30px"></div>
+                </div>
+                <div class="modal-body">
+                    <div ><img src="../public/images/sus.png" width="120px" height="120px"></div>
+                    <h2 class="textModal">Inserido com sucesso!</h2>
+                </div>
+                <div class="buttonXSmall bt">oK</div>
+            </div>
+            </div>
+        </div>
+        <div class="NavbarDashboard">
+            <div class="BoxLogo">
+                <div class="BoxImage">
+                </div>
+            </div>
+            <input type="checkbox" id="check">
+            <label id="icone" for="check"><i class="material-icons" style="color: white; font-size: 2em;">menu</i></label> 
+            <ul class="NavBox">
+                <li class="DivLink"><a href="dashboard.html"> <i class="material-icons">home</i> </a>Início</li>
+                <li class="DivLink"> <i class="material-icons">add_shopping_cart</i> Vendas</li>
+                <a class="DivLink" href="cadastro_cliente.html"> <i class="material-icons">person_add</i>Cadastros</a>
+                <li class="DivLink"><i class="material-icons">settings</i>Configurações</li>
+                <li class="DivLink"> <i class="material-icons">business_center</i>Consignado</li>
+            </ul>
+        </div>
+        <section class="sale">
+            <div class="sectionForm" id="app">
+                <div class="Container">
+                    <div class="SectionForm">
+                        <div class="TitleForm">
+                            <h1 class="title">Cadastrar Produto</h1>
+                        </div>
+                        <div class="Form">
+                            <div class="Group">
+                                <span class="span">Codigo</span>
+                                <input class="input" id="code" v-model="product.code"></input>
+                            </div>
+                            <div class="Group">
+                                <span class="span">Nome</span>
+                                <input class="input" id="name" v-model="product.name"></input>
+                            </div>
+                            <div class="div-value">
+                                <div class="Group">
+                                    <span class="span">Valor de custo</span>
+                                    <input class="input" id="valor" v-model="product.price"></input>
+                                </div>
+                                <div class="Group">
+                                    <span class="span">Adicional %</span>
+                                    <input class="input" id="adicional" v-model="product.adicional"></input>
+                                </div>
+                            </div>
+                            <div class="Group">
+                                <span class="span">Descrição</span>
+                                <input class="input" id="descricao" v-model="product.description"></input>
+                            </div>
+                            <div class="Group">
+                                <span class="span">Quantidade</span>
+                                <input class="input"  id ="quantidade" v-model="product.quantidade"></input>
+                            </div>
+                            <div class="Group">
+                                <span class="span">Categoria</span>
+                                <input class="input" id="categoria" v-model="product.categoria"></input>
+                            </div>
+                            <div class="boxButton" id="cadastrar" @click="saveProduct()">
+                                <div class="buttonSmall">Cadastrar</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script language="JavaScript" src="../public/scripts/cadastro_produto.js"></script>
+    </body>
+</html>

@@ -1,9 +1,11 @@
 var mongoose = require('mongoose');
+var Float = require('mongoose-float').loadType(mongoose, 4);
 
 var productSchema = mongoose.Schema({
 	code: Number,
     name: String,
-    price: Number,
+    categoria: String,
+    price: { type: Float },
     quantidade: String,
     description: String,
 });

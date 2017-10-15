@@ -1,11 +1,11 @@
 var mongoose = require('mongoose');
+var Float = require('mongoose-float').loadType(mongoose, 4);
 
 var vendaSchema = mongoose.Schema({
-	id: String,
     vendedor: String,
-    produto: String,
-    forma_pagamento: String,
-    valor: String,
+    produto: [],
+    pagamento: String,
+    valor: { type: Float },
     data: String,
     
 });

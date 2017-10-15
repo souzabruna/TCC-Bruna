@@ -11,6 +11,9 @@
 	height: 50px;
 	width: 100px;
 	border-radius: 7px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	cursor: pointer;
 	
 	font-family: 'Inconsolata', monospace;
 }
@@ -20,6 +23,7 @@
 	/*margin-right: 75px;*/
 	background-color: #E32F6C;
 	font-weight: normal;
+	cursor: pointer;
 }
 .buttonXSmall {
 	display: flex;
@@ -27,7 +31,7 @@
 	justify-content: center;
 	font-weight: normal;
 	font-size: 0.9em;
-	
+	cursor: pointer;
 	height: 35px;
 	width: 84px;
 	border-radius: 7px;

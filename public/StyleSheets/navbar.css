@@ -1,3 +1,7 @@
+.height-mob {
+	height: 65px;
+}
+
 .Navbar {
 	z-index: 2;
 	max-width: 100vw;
@@ -44,6 +48,13 @@
 }
 
 @media (min-width: 900px) {
+
+	.div-value-v{
+		width: 45%;
+		display: flex;
+		align-items: center;
+		flex-direction: row!important;
+	}
 	#check{
 		display: none;
 	}
@@ -137,25 +148,48 @@
 
 }
 @media (max-width: 700px){
+	.div-value {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: column!important;
+	}
+	.div-value-v{
+		width: 100%;
+		display: flex;
+		align-items: center;
+		flex-direction: row!important;
+	}
 	.NavbarDashboard{
 		/*background-color: rgba(219,10,91,1);*/
 		background-color: #212121;
 		min-width: 99%;
-		min-height: 100px;
+		min-height: 60px;
 		display: flex;
 		justify-content: flex-start;
-		align-items: center;
+		align-items: flex-start;
 	
 		
 		
 	}
+
+	.height-mob{
+		height: 70%;
+	}
+
+	.div-value {
+		display: flex;
+		flex-direction: column;
+	}
+
 	.NavBox{
 		opacity: 0.9;
 		
 		position: absolute;
-		background-color: #000;
-		width: 86%;
+		background-color: #212121;
+		width: 100%;
 		display: flex;
+		z-index: 10;
 		justify-content: flex-end;
 		flex-direction: column;
 		padding-left: 30px;
@@ -168,7 +202,7 @@
 		display: none;
 	}
 	#check:checked ~ .NavBox{
-		transform: translateY(300px);
+		transform: translateY(280px);
 
 	}
 	#icone{
