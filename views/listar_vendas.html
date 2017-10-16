@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/home.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/buttons.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/sections.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/form.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/boxes.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/navbar.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/utilites.css">
+        <link rel="stylesheet" type="text/css" href="../public/Stylesheets/modal.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="StyleSheets/utilites.css">
+        <link href="https://fonts.googleapis.com/css?family=ABeeZee" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Dekko" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.min.js"></script>
+    </head>
+    <body>
+        <div class="Modal" id="modsus">
+            <div class="Modal-overlay"></div>
+            <div id="cont" class="Modal-content">
+                <div class="modalHeader">
+                   <div class="icon-modal bts"><img src="StyleSheets/close.png" width="30px" height="30px"></div>
+                </div>
+                <div class="modal-body">
+                    <div ><img src="StyleSheets/sus.png" width="120px" height="120px"></div>
+                    <h2 class="textModal">Deletado com sucesso!</h2>
+                </div>
+                <div class="buttonXSmall bts">oK</div>
+            </div>
+        </div>
+        <div class="NavbarDashboard">
+            <div class="BoxLogo">
+                <div class="BoxImage">  
+                </div>
+            </div>
+            <input type="checkbox" id="check">
+            <label id="icone" for="check"><i class="material-icons" style="color: white; font-size: 2em;">menu</i></label>
+            <ul class="NavBox">
+                <li class="DivLink"><a href="dashboard.html"> <i class="material-icons">home</i></a>Início</li>
+                <li class="DivLink"> <i class="material-icons">add_shopping_cart</i> Vendas</li>
+                <a class="DivLink" href="cadastro_cliente.html"> <i class="material-icons">person_add</i>Cadastros</a>
+                <li class="DivLink"><i class="material-icons">settings</i>Configurações</li>
+                <li class="DivLink"> <i class="material-icons">business_center</i>Consignado</li>
+            </ul>
+        </div>
+        <section class="sale">
+            <div class="SectionProducts">
+                <div class="Product" id="CardProduct">
+                    <div class="headerCard"><div class="vendedor"><span></span></div></div>
+                    <div class="div">    
+                        <div class="ProductMore"><h1>Formas de pagamento</h1><img src="StyleSheets/images.png" width="100px" height="100px"></div>
+                        <div class="prod-bac">
+                        <div class="ProductItem">  <div class="ProductSubitem dia">Data<span class="u-padding-5"></span></div>
+                        <div class="ProductSubitem valor">VALOR  <span class="u-padding-5"> </span></div></div>
+                        <div class="ProductItem">  <div class="ProductSubitem "><span class="u-padding-5"></span></div>
+                        <div class="ProductSubitem ">  <span class="u-padding-5"> </span></div></div>
+                        <div class="ProductItem">  <div class="ProductSubitem "><span class="u-padding-5"></span></div>
+                        <div class="ProductSubitem ">  <span class="u-padding-5"> </span></div></div><div class="ProductItem">  <div class="ProductSubitem "><span class="u-padding-5"></span></div>
+                        <div class="ProductSubitem ">  <span class="u-padding-5"> </span></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script language="JavaScript" src="../public/scripts/listar_vendas.js"></script>
+    </body>
+</html>

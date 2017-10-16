@@ -3,38 +3,69 @@
 	display: flex;
 	justify-content: column;
 	flex-wrap: wrap;
-	border: 0.5px solid #E0C3A5;
+	/*border: 0.5px solid #E0C3A5;*/
 	justify-content: center;
 	align-self: center;
-	min-height: 85vh;
+	/*min-height: 65vh;*/
 	margin-top: 35px;
-	background-color: rgba(247,241,241,0.93);
+	/*background-color: #e8dee6;*/
+	background-image: url("./fundo.png");
+	background-size: cover;
+	background-repeat: no-repeat;
 	margin-bottom: 35px;
 	padding-bottom: 15px;
 	border-radius: 5px;
 
 }
 
+.div-value {
+	display: flex;
+    flex-direction: row;
+    width: 44%;
+    justify-content: space-between;
+}
+
+.SectionForm {
+height: 100%;
+width: 100%;
+/*background-color: rgba(4, 101, 130, 0.7);*/
+background: linear-gradient( rgba(153, 53, 185, 0.42), rgba(91, 234, 208, 0.69), rgba(175, 41, 92,0.71));
+}
+.prod-bac {
+	width: 100%;
+	height: 95%;
+	background: linear-gradient( rgba(224, 68, 140, 0.42), rgba(30, 222, 187, 0.77), rgba(41, 95, 175, 0.71));
+}
+
 .TitleForm {
 	font-family: 'Lato', sans-serif;
-	height: 20px;
+	height: 40px;
 	flex-grow: 1;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+		/*background-color: rgba(227, 47, 108, 0.7);*/
+		/*background-color: rgba(4, 101, 130, 0.7);*/
+
+		color: white;
 	}
 
 .Form {
 	font-family: 'Lato', sans-serif;
 	padding-top: 30px;
+	height: 100%;
 	flex-grow: 9;
 	width: 98%;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	margin-bottom: 0;
 	flex-wrap: wrap;
 	flex-direction: column;
 	border-radius: 5px;
-		background-color: rgba(247,241,241,0.93);
+		/*background-color: #e8dee6;*/
+		/*background-color: rgba(4, 101, 130, 0.7);*/
+		color: white;
 
 }
 
@@ -44,17 +75,18 @@
 	width: 90%;
 	flex-direction: column;
     margin: 15px;
-    height: 60px;
+    height: 65px;
     font-size: 1em;
 	justify-content: center;
 }
 
 .input {
-	border: 1px solid #C61357;
+	border: 2px solid #C61357;
 	height: 30px;
 	border-radius: 5px;
 	margin-top: 4px;
-	background-color: transparent;
+	background-color: white;
+	padding-left: 5px;
 }
 
 .input:hover {
@@ -68,61 +100,73 @@
 
 .span {
 	font-family: 'Lato', sans-serif;
-
-
 }
 
 .boxButton {
-	padding-top: 20px;
+	/*padding-top: 20px;*/
 	flex-grow: 1;
 	width: 100%;
 	display: flex;
 	align-self: flex-end;
 	justify-content: flex-end;
+/*	background-color: rgba(4, 101, 130, 0.7);*/
 
 
 }
 .title {
-		color: #B63165;
+		color: white;
 		font-size: 2em;
-		font-weight: bold;
+		font-weight: lighter;
+		text-transform: capitalize;
 
+
+	}
+	.TitleForm h1{
+		font-size: 1.5em;
+		/*padding: 2px;*/
+		text-align: center;
 	}
 
 @media (min-width: 900px) {
 	.Container {
-		border: 0.5px solid #E0C3A5;
-		width: 70vw;
-		
+		/*border: 0.5px solid #E0C3A5;*/
+		width: 65%;
+		height: 80%;
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
 		flex-direction: column;
 		border-radius: 5px;
-		margin-bottom: 50px;
-		padding-bottom: 30px;
+		margin-bottom: 30px;
+		/*padding-bottom: 30px;*/
 	}
 
 
 	.TitleForm {
 		padding-bottom: 15px;
-		height: 20px;
-		flex-grow: 1;
-		width: 70vw;
+		height: 50px;
+		/*flex-grow: 1;*/
+		width: 100%;
 		display: flex;
 		justify-content: center;
+		/*background-color: rgba(227, 47, 108, 0.7);*/
+		/*background-color: (4, 101, 130, 0.7);*/
+		color: white;
 
 	}
+
+
 	.title {
-		color: #B63165;
-		font-size: 2em;
+		color: white;
+		font-size: 1.5em;
 		font-weight: bold;
 
 	}
 	.Form {
 		padding-top: 25px;
-		flex-grow: 9;
-		width: 70vw;
+		/*flex-grow: 9;*/
+		width: 100%;
+		height: 80%;
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
@@ -141,7 +185,7 @@
 		margin-bottom: 0 !important;
 		display: flex;
 		flex-direction: column;
-	    margin: 15px;
+
 	    height: 60px;
 	    font-size: 1em;
 		width: 40%;
@@ -160,9 +204,10 @@
 
 	}
 	.input {
-		border: 0.5px solid #C61357;
+		border: 2px solid #C61357;
 		height: 30px;
 		border-radius: 5px;
+		background-color: white;
 		margin-top: 4px;
 	}
 	.input:hover {
@@ -201,11 +246,16 @@
 	.boxButton {
 	padding-top: 20px;
 	flex-grow: 1;
-	width: 70vw;
+	padding-bottom: 10px;
+	width: 92%;
+	height: 10%;
 	display: flex;
 	align-self: flex-end;
 	justify-content: flex-end;
 	padding-right: 70px;
+	/*background-color: rgba(4, 101, 130, 0.7);*/
+	margin: 0;
+
 
 }
 

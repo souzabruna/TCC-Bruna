@@ -4,18 +4,57 @@
 	justify-content: center;
 	font-weight: normal;
 	font-size: 1.2em;
+<<<<<<< HEAD
 	box-shadow: 3px 2px 4px #B63165;
 	/*margin-right: 75px;*/
 	background-color: #E32F6C;
+=======
+	
+	background-color:  #ffffff;
+	color: #E32F6C;
+	border: 2px solid #E32F6C;
+>>>>>>> 1dfc05f68bfc637e2f1bb00287248c4a2cdc72a9
 	height: 50px;
 	width: 100px;
 	border-radius: 7px;
-	color: white;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	cursor: pointer;
+	
 	font-family: 'Inconsolata', monospace;
 }
 .buttonSmall:hover {
-	box-shadow: 3px 2px 4px #E32F6C;
-	background-color:  #B63165;
+	color: white;
+	box-shadow: 3px 2px 4px #B63165;
+	/*margin-right: 75px;*/
+	background-color: #E32F6C;
+	font-weight: normal;
+	cursor: pointer;
+}
+.buttonXSmall {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: normal;
+	font-size: 0.9em;
+	cursor: pointer;
+	height: 35px;
+	width: 84px;
+	border-radius: 7px;
+	text-transform: uppercase;
+	font-family: 'lato', monospace;
+	background-color:  #ffffff;
+	color: #E32F6C;
+	border: 2px solid #E32F6C;
+	font-weight: bold;
+
+}
+.buttonXSmall:hover {
+	color: white;
+	box-shadow: 3px 2px 4px #B63165;
+	/*margin-right: 75px;*/
+	background-color: #E32F6C;
+	font-weight: normal;
 }
 
 .buttonXSmall {
@@ -53,7 +92,8 @@
 	font-weight: normal;
 	font-size: 1.5em;
     text-decoration: none;
-    background-color: #FF1158;
+    background-color:  #ffffff;
+	color: #E32F6C;
     height: 90px;
     width: 200px;
     border-radius: 7px;
@@ -61,8 +101,11 @@
 
 }
 .buttonMedium:hover {
-	box-shadow: 3px 2px 4px #E32F6C;
-	background-color:  #B63165;
+	color: white;
+	box-shadow: 3px 2px 4px #B63165;
+
+	background-color: #E32F6C;
+	font-weight: normal;
 }
 .buttonSlim {
 	display: flex;
