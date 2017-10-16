@@ -4,9 +4,7 @@ var mongoose = require('mongoose');
 var Product = require('./models/product.js');
 var User= require('./models/user.js');
 var Client= require('./models/client.js');
-///var dbURL = process.env.MONGO_URL;
-//var dbURL = "mongodb://easy_sale:Easybd@ds151951.mlab.com:51951/easy_sale";
-var dbURL = "mongodb://aluno5-OptiPlex-990.local:27017/test";
+var dbURL = "mongodb://easy_sale:Easybd@ds151951.mlab.com:51951/easy_sale";
 
 // Testa variável de ambiente
 if(!dbURL){
@@ -93,7 +91,7 @@ app.get('/api/product/update/:id/:name/:price', function (req, res) {
 });
 
 // DELETE
-app.get('/api/product/delete/:id', function (req, res) {
+app.get('/api/product/delete/:code', function (req, res) {
   var id = req.param('id');
   Product.deleteOne({ _id: id},function(error){
     var result = '';

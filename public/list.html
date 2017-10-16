@@ -17,52 +17,36 @@
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dekko" rel="stylesheet">
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-resource/1.3.4/vue-resource.min.js"></script>
 </head>
 <body>
   <div id="app">
     <div class="SectionProducts">
-           <template v-for="product in products">
+           
             <div class="Product">
-             <div class="ProductItem"><span>{{product.name}}</span></div>
-            <div class="ProductItem"><div class="ProductSubitem"> Código: <span v-model="product.code">{{product.code}}</span></div>
-            <div class="ProductSubitem"> Preço: <span>{{product.price}}</span></div></div>
+            <div class="ProductItem">  Código: <span>Produto</span></div>
+            <div class="ProductItem">  
+           <div class="ProductSubitem"></dir> Nome: <span>Produto</span></div>
+            <div class="ProductSubitem"> Preço: <span>Produto</span></div>
+           </div>
             <div class="BoxButtonProduct">
-              <div class="buttonXSmall">Editar</div>
-              <div class="buttonXSmall" @click="deleteProducts()">Excluir</div>
+              <div class="buttonSmall">Editar</div>
+              <div class="buttonSmall">Excluir</div>
             </div>
           </div>
-        </template>
+      
+      <div class="Product">
+            <div class="ProductItem">  Código: <span>Produto</span></div>
+            <div class="ProductItem">  Nome: <span>Produto</span></div>
+            <div class="ProductItem"> Preço: <span>Produto</span></div>
+            <div class="BoxButtonProduct">
+              <div class="buttonSmall">Editar</div>
+              <div class="buttonSmall">Excluir</div>
+            </div>
+          </div>
       </div>
   </div>
+  </div>
 </body>
-<script>
-new Vue({
-  el: '#app',
-  data:{
-    products:[]
- 
-      },
-  methods: {
-    getProducts(){
-      this.$http.get('/api/product/').then(response => {
-        console.log(response)
-        this.products = response.body
-      }, error => {
-        alert(error.body)
-      });
-    },
-
-  },
-
-  created(){
-    this.getProducts()
-
-  }
-})
-</script>
 
 </html>
 
